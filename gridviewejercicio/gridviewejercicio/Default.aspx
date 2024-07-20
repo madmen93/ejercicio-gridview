@@ -16,4 +16,5 @@
             <asp:BoundField HeaderText="Distrito" DataField="distrito" />
         </Columns>
     </asp:GridView>
+    <asp:Button ID="btnNuevaDireccion" runat="server" Text="Agregar Dirección" CssClass="btn btn-primary" OnClick="btnNuevaDireccion_Click" />
 </asp:Content>

@@ -20,5 +20,10 @@ namespace gridviewejercicio
             gdvDirecciones.DataSource = Session["listaDirecciones"];
             gdvDirecciones.DataBind();
         }
+
+        protected void btnNuevaDireccion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NuevaDireccion.aspx", false);
+        }
     }
 }
