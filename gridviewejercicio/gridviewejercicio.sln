@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gridviewejercicio", "gridviewejercicio\gridviewejercicio.csproj", "{F3A428F4-3B69-4368-B5A1-72C6567D28FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{EA2F2A9B-31CD-4A0F-8D4D-964E576EB056}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F3A428F4-3B69-4368-B5A1-72C6567D28FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3A428F4-3B69-4368-B5A1-72C6567D28FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3A428F4-3B69-4368-B5A1-72C6567D28FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA2F2A9B-31CD-4A0F-8D4D-964E576EB056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA2F2A9B-31CD-4A0F-8D4D-964E576EB056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA2F2A9B-31CD-4A0F-8D4D-964E576EB056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA2F2A9B-31CD-4A0F-8D4D-964E576EB056}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
