@@ -36,7 +36,16 @@
                     <asp:TextBox ID="tbxDistrito" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
             </div>
+            <%if (Request.QueryString["Id"] == null)
+                { %>
             <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click" />
+
+            <% } else
+            { %>
+            <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="btn btn-primary" OnClick="btnModificar_Click" />
+
+            <% } %>
             <a href="Default.aspx" class="link-opacity-100">Cancelar</a>
         </div>
+    </div>
 </asp:Content>

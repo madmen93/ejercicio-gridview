@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,7 +13,22 @@ namespace gridviewejercicio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["Id"] != null && IsPostBack != true)
+            {
+                int Id = int.Parse(Request.QueryString["Id"]);
+                List<Direccion> temporal = new List<Direccion>();
+                temporal = (List<Direccion>)Session["listaDirecciones"];
+                Direccion seleccionada = temporal.Find(x => x.Id == Id);
+                tbxId.Text = seleccionada.Id.ToString();
+                tbxId.ReadOnly = true;
+                tbxCalle.Text = seleccionada.calle;
+                tbxNumero.Text = seleccionada.numero.ToString();
+                tbxCodPos.Text = seleccionada.codigoPostal.ToString();
+                tbxDistrito.Text = seleccionada.distrito;
 
+                lbTitutlo.Text = "Modificar dirección";
+
+            }
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -28,6 +44,23 @@ namespace gridviewejercicio
             listaTemporal = (List<Direccion>)Session["listaDirecciones"];
             listaTemporal.Add(nuevo);
 
+            Response.Redirect("Default.aspx", false);
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            List<Direccion> temporal = (List<Direccion>)Session["listaDirecciones"];
+            Direccion modificada = new Direccion();
+            modificada.Id = int.Parse(tbxId.Text);
+            modificada.calle = tbxCalle.Text;
+            modificada.numero = int.Parse(tbxNumero.Text);
+            modificada.codigoPostal = int.Parse(tbxCodPos.Text);
+            modificada.distrito = tbxDistrito.Text;
+
+            var Id = temporal.FindIndex(x => x.Id == modificada.Id);
+
+            temporal[Id] = modificada;
             Response.Redirect("Default.aspx", false);
         }
     }
