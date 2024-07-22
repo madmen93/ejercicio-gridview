@@ -43,6 +43,8 @@
             <% } else
             { %>
             <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="btn btn-primary" OnClick="btnModificar_Click" />
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminar_Click" />
+            <br />
 
             <% } %>
             <a href="Default.aspx" class="link-opacity-100">Cancelar</a>

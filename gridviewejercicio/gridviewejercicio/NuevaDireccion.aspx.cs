@@ -63,5 +63,16 @@ namespace gridviewejercicio
             temporal[Id] = modificada;
             Response.Redirect("Default.aspx", false);
         }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            List<Direccion> temporal = (List<Direccion>)Session["listaDirecciones"];
+            int Id = int.Parse(Request.QueryString["Id"]);
+            var index = temporal.FindIndex(x => x.Id == Id);
+            temporal.RemoveAt(index);
+            Response.Redirect("Default.aspx", false);
+
+
+        }
     }
 }
