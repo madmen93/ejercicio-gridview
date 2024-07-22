@@ -25,5 +25,11 @@ namespace gridviewejercicio
         {
             Response.Redirect("NuevaDireccion.aspx", false);
         }
+
+        protected void gdvDirecciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var Id = gdvDirecciones.SelectedDataKey.Value.ToString();
+            Response.Redirect("NuevaDireccion.aspx?Id=" + Id, false);
+        }
     }
 }

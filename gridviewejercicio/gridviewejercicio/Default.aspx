@@ -8,12 +8,13 @@
         }
     </style>
     <h2>GridView de Direcciones:</h2>
-    <asp:GridView ID="gdvDirecciones" CssClass="table table-success table-striped" runat="server" AutoGenerateColumns="false">
+    <asp:GridView ID="gdvDirecciones" CssClass="table table-success table-striped" DataKeyNames="Id" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="gdvDirecciones_SelectedIndexChanged">
         <Columns>
             <asp:BoundField HeaderText="Id" DataField="Id" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
             <asp:BoundField HeaderText="Calle" DataField="calle" />
             <asp:BoundField HeaderText="Número" DataField="numero" />
             <asp:BoundField HeaderText="Distrito" DataField="distrito" />
+            <asp:CommandField ShowSelectButton="true" HeaderText="Dirección Seleccionada" />
         </Columns>
     </asp:GridView>
     <asp:Button ID="btnNuevaDireccion" runat="server" Text="Agregar Dirección" CssClass="btn btn-primary" OnClick="btnNuevaDireccion_Click" />
